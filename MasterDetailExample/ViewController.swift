@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var fruitWebView: UIWebView!
+    var fruitName = ""
+    @IBOutlet weak var detailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // detailLabel.text = fruitName
+        let urlString = "http://ja.wikipedia.org/wiki/" + fruitName
+        self.fruitWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
         // Do any additional setup after loading the view, typically from a nib.
     }
 
